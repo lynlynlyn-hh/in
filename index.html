@@ -1,0 +1,108 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="renderer" content="webkit" />
+    <link href="./SPCP/index.css" rel="stylesheet" />
+    <script src="./SPCP/jquery-2.1.4.min.js"></script>
+    <script src="./SPCP/validation.js"></script>
+    <link href="./SPCP/layer.css" rel="stylesheet" />
+    <script src="./SPCP/layer.js"></script>
+    <title>西南石油大学-疫情防控管理平台</title>
+    <script type="text/javascript">
+
+ function fuTime() {
+             $('#time').val(getTime());
+       }
+
+
+    var image = "";
+
+        function  getTime() {
+            var d=new Date();
+            var year=d.getFullYear()  //获取年
+            var month=d.getMonth()+1;  //获取月，从 Date 对象返回月份 (0 ~ 11)，故在此处+1
+            var day=d.getDay()    //获取日
+            var days=d.getDate() //获取日期
+            var hour=d.getHours()   //获取小时
+            var minute=d.getMinutes()  //获取分钟
+            var second=d.getSeconds()   //获取秒
+
+            if(month<10) month="0"+month
+            if(days<10) days="0"+days
+            if(hour<10) hour="0"+hour
+            if(minute<10) minute="0"+minute
+            if(second<10) second="0"+second
+
+            var da=year+"."+month+"."+days+" "+hour+":"+minute;
+              return da;
+        }
+
+
+        /*解决苹果返回不刷新问题*/
+        $(function () {
+            var isPageHide = false;
+            window.addEventListener('pageshow', function () {
+                if (isPageHide) {
+                    window.location.reload();
+                }
+            });
+            window.addEventListener('pagehide', function () {
+                isPageHide = true;
+            });
+        });
+    </script>
+</head>
+<body>
+    
+
+<div class="logo">
+    <img src="./SPCP/logo.png" />
+</div>
+<div class="container">
+    <div class="pad">
+        <div class="codebox">
+            <p>请出示到校码入校</p>
+            <div class="codeimg">
+                <img src="./SPCP/GetQRCode1.jfif" />
+            </div>
+            <div class="lb"></div>
+            <div class="rb"></div>
+        </div>
+        <div class="infos">
+            <p class="info">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：刘雨酿</p>
+            <p class="info">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：201831061223</p>
+            <p class="info">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;院：计算机科学学院</p>
+            <p class="info">班&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;级：计算机1802</p>
+            <p class="info">入校地址：【校本部】东大门</p>
+            <p class="info">入校时间：<input class="input_liekai" id="time" onclick="fuTime()"></p>
+        </div>
+    </div>
+</div>
+<link href="./SPCP/ArriveQRCode.css" rel="stylesheet" />
+        <link href="./SPCP/menustyle.css" rel="stylesheet" />
+        <script src="./SPCP/menu.js"></script>
+        <div id="cd-nav" class="is-fixed">
+            <a href="javascript:void(0)" class="cd-nav-trigger"><span></span></a>
+            <nav id="cd-main-nav">
+                <ul>
+                        <li>
+                            <a href="/SPCP/Web/Account/ChooseSys">
+                                <img src="./SPCP/icon1.png" /> 返回首页
+                            </a>
+                        </li>
+                                        <li>
+                        <a href="/SPCP/Web/Account/Logout">
+                            <img src="./SPCP/icon3.png" /> 安全退出
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+</body>
+</html>
+<!--第二版-->
